@@ -1,0 +1,119 @@
+@main_width:1200px;
+//初始化样式
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    font-family: "微软雅黑";
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+//工具样式
+.v-center(@left:0px, @right:0px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto @left auto @right;
+}
+.max-width {
+    position: relative;
+    max-width: @main_width;
+    margin: 0 auto;
+}
+//页面样式
+.header {
+    background: #41B146;
+    height: 80px;
+    .nav {
+        width: 100%;
+        height: 100%;
+        .max-width;
+        .logo {
+            display: block;
+            width: 160px;
+            .v-center;
+        }
+        >ul {
+            height: 40px;
+            .v-center(0px,195px);
+            li {
+                display: inline-block;
+                height: 100%;
+                line-height: 40px;
+                font-size: 14px;
+                color: white;
+                border-radius: 15px;
+                font-weight: 400;
+                &:hover {
+                    background-color: rgba(0,0,0,.1);
+                }
+                a {
+                    display: block;
+                    padding: 0 15px;
+                    width: 100%;
+                }
+            }
+            li.active {
+                background-color: rgba(0,0,0,.1);
+            }
+        }
+    }
+}
+.content{
+    .max-width;
+    .title{
+        height: 50px;
+        #t_title{
+            width: @main_width - 104px;
+            height: 100%;
+            display: inline-block;
+            border-bottom: dotted 1px #000;
+        }
+        .submit{
+            float: right;
+            width: 100px;
+            height: 40px;
+            margin: 5px 2px;
+        }
+    }
+    .article{
+        padding-top: 10px;
+        .brief{
+             list-style:square;
+             margin-left:30px ;
+             margin-bottom:8px ;
+            li{
+                margin: 5px 0 ;
+            }
+            li:last-of-type{
+               float: left;
+            }
+            a{
+                display: inline-block;
+                font-size: larger;
+                font-weight: bold;
+                margin:0 5px;
+                padding-top:3px ;
+            }
+        }
+        hr{
+            width: 100%;
+            border: dotted 1px ;
+        }
+        .main{
+            .m_title{
+                margin: 10px 5px;
+            }
+            .m_main{
+                border: solid 1px;
+            }
+        }
+    }
+    
+}
+   

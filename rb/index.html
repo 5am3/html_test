@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>每日日报</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/load.js" ></script>
+		
+	</head>
+	<body>
+		<div class="header">
+		<div class="nav">
+				<a href="./index.html"><img src="img/logo.png" class="logo"></a>
+					<ul>
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#">课程</a>
+						</li>
+						<li >
+							<a href="#">导师</a>
+						</li>
+						<li>
+							<a href="#">关于我们</a>
+						</li>
+						<li class="active">
+							<a href="#">每日日报</a>
+						</li>
+					</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="title">
+				<input type="text" maxlength="100"  id="t_title" placeholder="日报标题">
+				<button class="submit" onclick=load()>提交</button>
+			</div>
+			<div class="article">
+					<ul class="brief">
+						<li id="2011"><input type="text" maxlength="50" id="2001" onchange="brief_load(2001)" class="t_brief" placeholder="学习概况"></li>
+						<a onclick="jian()">-</a><a onclick="jia()">+</a>
+					</ul>
+					<hr>
+					<div class="main">
+						<div class="m_u" id="2021">
+							<div class="m_title">学习概况</div>
+							<div class="m_main" id="progressBarZone"><textarea id="2031" style="width: 100%;" rows="15" placeholder="请输入内容"></textarea></div>
+						</div>
+					</div>
+					
+			</div>
+			
+		</div>
+	</body>
+    <script type="text/javascript" src="js/upload.js"></script>
+</html>
