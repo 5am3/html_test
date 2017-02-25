@@ -39,7 +39,7 @@ function sendFile(files) {
             if (xhr.readyState == 4) {
                 var status = xhr.status;
                 if (status >= 200 && status < 300) {
-                   date_src=xhr.responseText;
+                   date_src="![图片注释]("+xhr.responseText+")";
 				   test(date_src)
                    alert("上传完成。")
                 }
