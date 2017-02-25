@@ -1,6 +1,6 @@
 // JavaScript Document
 var progressBarZone = document.getElementById('progressBarZone');
-
+var date_src="";
 function sendFile(files) {
        if (!files || files.length < 1) {
              return;
@@ -24,27 +24,12 @@ function sendFile(files) {
 	   		var file = files[0];    // file 对象有 name, size 属性
             
             formData.append( 'myFile' , file);       // 往FormData对象添加File对象
-            
-            fileNames += '《' + file.name + '》， ' ;
       
        var xhr = new XMLHttpRequest();
-      xhr.upload.addEventListener( 'progress',
-             function uploadProgress(evt) {
-                   // evt 有三个属性：
-                   // lengthComputable – 可计算的已上传字节数
-                   // total – 总的字节数
-                   // loaded – 到目前为止上传的字节数
-                   if (evt.lengthComputable) {
-                        percent.innerHTML = fileNames + ' upload percent :' + Math.round((evt.loaded / evt.total)  * 100) + '%' ;
-                  }
-            }, false); // false表示在事件冒泡阶段处理
 
-      xhr.upload.onload = function() {
-            percent.innerHTML = fileNames + '上传完成。' ;
-      };
 
       xhr.upload.onerror = function(e) {
-            percent.innerHTML = fileNames + ' 上传失败。' ;
+            percent.innerHTML =' 上传失败。' ;
       };
 
       xhr.open( 'post', 'uploadIMG.php' , true);
@@ -54,7 +39,9 @@ function sendFile(files) {
             if (xhr.readyState == 4) {
                 var status = xhr.status;
                 if (status >= 200 && status < 300) {
-                   alert(xhr.responseText);
+                   date_src=xhr.responseText;
+				   test(date_src)
+                   alert("上传完成。")
                 }
             }
         }
@@ -78,4 +65,24 @@ var f_up_bt = document.getElementById("files_hiden");
 f_up_bt.onchange=function(){
 	sendFile(f_up_bt.files);
 }
-  
+
+
+
+
+function test(str){  
+    var tc = document.getElementById(c_id);  
+    var tclen = tc.value.length;  
+    tc.focus();  
+    if(typeof document.selection != "undefined")  
+    {  
+        document.selection.createRange().text = str;    
+    }  
+    else  
+    {  
+        tc.value = tc.value.substr(0,c_weizhi)+str+tc.value.substring(c_weizhi,tclen);  
+    }  
+}  
+
+
+
+
