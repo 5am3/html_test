@@ -72,3 +72,10 @@ document.addEventListener("drop", function(e) {
 
       sendFile(e.dataTransfer.files);
 }, false);
+
+var f_up_bt = document.getElementById("files_hiden");
+
+f_up_bt.onchange=function(){
+	sendFile((f_up_bt).value);
+}
+  

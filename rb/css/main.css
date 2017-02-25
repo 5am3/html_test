@@ -109,6 +109,31 @@ a {
 }
 .content .article .main .m_title {
   margin: 10px 5px;
+  display: inline-block;
+}
+.content .article .main .m_title .uploader {
+  left: 10px;
+  position: relative;
+  display: inline-block;
+}
+.content .article .main .m_title .uploader #files_hiden {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  cursor: pointer;
+  font-size: 0;
+  padding: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 66px;
+  height: 23px;
+}
+.content .article .main .m_title .uploader #files_hiden_text {
+  background-color: rgba(1, 1, 1, 0.1);
+}
+.content .article .main .m_title .uploader #files_hiden_text:hover {
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .content .article .main .m_main {
   border: solid 1px;

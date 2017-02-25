@@ -75,6 +75,6 @@ function uploadFile($fileInfo,$uploadPath = 'upload/img',$flag=true,$allowExt=ar
 // 		'size'=>$fileInfo['size'],
 // 		'type'=>$fileInfo['type']
 // 	);
-	echo $destination;
+	echo "http://rb.5am3.com/".$destination;
 	return $destination;
 }
