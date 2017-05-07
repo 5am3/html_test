@@ -5,6 +5,7 @@ function Close_comment(){
 	$('#CM').hide();
 }
 
+
 var aData =["很差","较差","一般","推荐","力推"];  
   
 window.onload=function(){  
@@ -43,6 +44,20 @@ window.onload=function(){
           	$('#score').val(this.index +1);
           	k=1;
         };  
-    }  
+    }
+
+    var sDiv = document.getElementById("s_food_show");  
+    var aImg = oDiv.getElementsByTagName("img");  
+    for(i=0;i<aImg.length;i++){
+        $('.s_food_show').onmouseover=function () {
+
+            $('.b_food_show img')[0].src=$('.s_food_show .active')[0].src
+        };
+        $('.s_food_show').onmouseout=function () {
+            
+        };
+    }
+   
+          
   
 };  

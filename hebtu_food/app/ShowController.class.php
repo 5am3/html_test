@@ -2,6 +2,7 @@
 
 
 class ShowController{
+	var $list=array('第一食堂','第二食堂','第三食堂','第四食堂','第五食堂','清真食堂');
 	public function init(){
 		$smarty = new Smarty();
 		$smarty->left_delimiter = "{";
@@ -34,9 +35,11 @@ class ShowController{
 		$smarty->assign('waittime',$waittime);
 
 		$smarty->assign('comment',$comment);
+		$smarty->assign('list',$this->list);
 		$smarty->assign('FoodObj',$FoodObj);
-		$DB->DElconn();
+		
 		$smarty->display('food.html');
+		$DB->DElconn();
 
 
 	}
@@ -58,7 +61,9 @@ class ShowController{
 		if(empty($Food)){
 			$Food="";
 		}
+
 		$smarty->assign('Food',$Food);
+		$smarty->assign('list',$this->list);
 		$DB->DElconn();
 		$smarty->display('FoodList.html');
 	}
@@ -66,8 +71,12 @@ class ShowController{
 	{
 		# code...
 		$smarty=$this->init();
-		$list=array('第一餐厅','第二餐厅','第三餐厅','第四餐厅','第五餐厅','清真餐厅');
-		$smarty->assign('list',$list);
+		$smarty->assign('list',$this->list);
 		$smarty->display('index.html');
+	}
+	public function ShowUPload()
+	{
+		$smarty=$this->init();
+		$smarty->display('foodupload.html');
 	}
 }

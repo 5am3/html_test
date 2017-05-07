@@ -30,7 +30,7 @@ function showlist(){
 		$('#list2').append("<option value=\"粥类\">粥类</option>");
 		
 	}  
-	if($('#list1').val()=='饮品小吃'){
+	if($('#list1').val()=='小吃'){
 		$('#list2').show();
 		$('#list2').html('');	
 		$('#list2').append("<option value=\"肉类\">肉类</option>");

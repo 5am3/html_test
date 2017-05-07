@@ -8,7 +8,7 @@ if($_GET){
 	$title=$_GET['t'];
 	
 }else{
-	$select="一期食堂一楼";
+	$select="第一食堂";
 	$title="place1";
 
 }

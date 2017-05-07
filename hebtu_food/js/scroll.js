@@ -11,7 +11,7 @@ window.onload = function ()
     var index = 1;
     var len = 12;
     var animated = false;
-    var interval = 3000;
+    var interval = 2000;
     var timer;
 
 

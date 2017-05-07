@@ -68,6 +68,10 @@ textarea{
 .s_food_show{
 	padding-left: 10px;
 }
+.s_food_show .active{
+	border: 2px solid #ff6e3d;
+	padding:1px;
+}
 .food_show .s_food_show img{
 	width: 92px;
 	height: 56px;

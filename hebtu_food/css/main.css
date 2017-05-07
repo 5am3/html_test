@@ -79,7 +79,6 @@ a:hover{
 
 .right{
 	padding-top: 25px;
-	height:340px;
 	margin-left: 230px;
 	padding-left: 40px;
 	min-height: 1000px;
@@ -203,7 +202,9 @@ a:hover{
 
 }
 
-
+.cardlist{
+	margin-top: 80px;
+}
 .ic_card{
 	border: 2px solid;
 	width: 150px;
@@ -213,6 +214,12 @@ a:hover{
 	position: relative;
 	vertical-align: bottom;
 
+}
+.ic_card h3{
+	text-align: center;
+}
+.ic_card p{
+	text-indent: 2em;
 }
 
 .ic_card img{

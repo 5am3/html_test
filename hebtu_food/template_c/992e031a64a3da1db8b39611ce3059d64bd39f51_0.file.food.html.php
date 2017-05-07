@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2017-05-07 10:20:15
+/* Smarty version 3.1.30, created on 2017-05-07 11:18:39
   from "C:\wamp\www\hebtu_food\tpl\food.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_590ef4df058e10_14964279',
+  'unifunc' => 'content_590f028f6264a7_26919092',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '992e031a64a3da1db8b39611ce3059d64bd39f51' => 
     array (
       0 => 'C:\\wamp\\www\\hebtu_food\\tpl\\food.html',
-      1 => 1494152395,
+      1 => 1494153906,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_590ef4df058e10_14964279 (Smarty_Internal_Template $_smarty_tpl) {
+function content_590f028f6264a7_26919092 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +38,20 @@ function content_590ef4df058e10_14964279 (Smarty_Internal_Template $_smarty_tpl)
      	<div class="nav_content">
         <!-- <img src="image1/5.png" width="150px"> -->
 		    <ul class="nav_title">
-		        <li><a href="#" class="checked">首页</a></li>
-			    <li><a href="#">第一餐厅</a></li>
-			    <li><a href="#">第二餐厅</a></li>
-			    <li><a href="#">第三餐厅</a></li>
-			    <li><a href="#">第四餐厅</a></li>
-			    <li><a href="#">第五餐厅</a></li>
-			    <li><a href="#">清真餐厅</a></li>
-			    <li><a href="#">餐饮服务</a></li>
+		       <li><a href="index.php" class="checked">首页</a></li>
+             <li><a href="ShowList.php?t=place1&s=<?php echo $_smarty_tpl->tpl_vars['list']->value[0];?>
+">第一食堂</a></li>
+             <li><a href="ShowList.php?t=place1&s=<?php echo $_smarty_tpl->tpl_vars['list']->value[1];?>
+">第二食堂</a></li>
+             <li><a href="ShowList.php?t=place1&s=<?php echo $_smarty_tpl->tpl_vars['list']->value[2];?>
+">第三食堂</a></li>
+             <li><a href="ShowList.php?t=place1&s=<?php echo $_smarty_tpl->tpl_vars['list']->value[3];?>
+">第四食堂</a></li>
+             <li><a href="ShowList.php?t=place1&s=<?php echo $_smarty_tpl->tpl_vars['list']->value[4];?>
+">第五食堂</a></li>
+             <li><a href="ShowList.php?t=place1&s=<?php echo $_smarty_tpl->tpl_vars['list']->value[5];?>
+">清真食堂</a></li>
+             <li><a href="#">餐饮服务</a></li>
 		    </ul>
     	</div>
    </div>
