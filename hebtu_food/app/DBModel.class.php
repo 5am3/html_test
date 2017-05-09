@@ -4,7 +4,7 @@ class DBModel{
 	var $conn;
 
 	public function conn(){
-		$this->conn = mysql_connect('qdm117251480.my3w.com','qdm117251480','051347wxd');
+		$this->conn = mysql_connect('0000','000','0000');
 		if(!$this->conn){
 			echo "数据库链接失败";
 			exit;
