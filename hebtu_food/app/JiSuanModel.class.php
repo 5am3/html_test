@@ -9,14 +9,15 @@ class JiSuanModel{
 		$sum=0;
 		$i=0;
 		$Comment_R=$DB->LoadComment($id);
-		$DB->DElconn();
-		if($Comment_R){
-			while($row = mysql_fetch_array($Comment_R,MYSQL_ASSOC)){
-				$sum+=$row['star'];
-				$i+=1;
-			}
-			return $sum/$i ;
-		}else return '';
+		foreach ($Comment_R as $key) {
+			$sum+=$key['star'];
+			$i=$i+1;
+		}
+		if($i==0){
+			return 0;
+		}
+		$re=(float)$sum/$i;
+		return $re;
 		
 	}
 
@@ -27,13 +28,21 @@ class JiSuanModel{
 		$sum=0;
 		$i=0;
 		$Comment_R=$DB->LoadComment($id);
-		$DB->DElconn();
-		if($Comment_R){
-			while($row = mysql_fetch_array($Comment_R,MYSQL_ASSOC)){
-				$sum+=$row['waitTime'];
-				$i+=1;
-			}
-			return $sum/$i ;
-		}else return '';
+
+		foreach ($Comment_R as $key) {
+			$sum+=$key['waitTime'];
+			$i=$i+1;
+		}
+		if($i==0){
+			return 0;
+		}
+		$re=(float)$sum/$i;
+		return $re;
+
+		
 	}
 }
+
+
+
+

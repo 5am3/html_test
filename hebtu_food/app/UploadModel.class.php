@@ -1,7 +1,7 @@
 <?php
 class UploadModel{
 
-	public function Img($fileInfo,$uploadPath = '../upload/img',$flag=true,$allowExt=array('jpeg','jpg','gif','png'),$maxSize = 2097152){
+	public function Img($fileInfo,$uploadPath = 'upload/img',$flag=true,$allowExt=array('jpeg','jpg','gif','png'),$maxSize = 2097152){
 		// 判断错误号
 		if ($fileInfo ['error'] > 0) {
 			switch ($fileInfo ['error']) {

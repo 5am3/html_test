@@ -12,8 +12,7 @@ header("Content-type:text/html;charset=utf-8");
 
 				$name=$UP->SEC($_POST['name']);
 				$price=$UP->SEC($_POST['price']);
-				$opentime=$UP->SEC($_POST['opentime']);
-				$place1=$UP->SEC($_POST['place']);
+				$place=$UP->SEC($_POST['place']);
 				$list1=$UP->SEC($_POST['list1']);
 				$list2=$UP->SEC($_POST['list2']);
 
@@ -30,17 +29,16 @@ header("Content-type:text/html;charset=utf-8");
 				if(!empty($_FILES['pic4']['tmp_name'])) $pic4=$UP->Img($_FILES['pic4']);
 				else $pic4='';
 
+				$foodUid=$DB->SaveFood($name,$price,$pic1,$pic2,$pic3,$pic4,$list1,$list2,$place);
 
-				$foodUid=$DB->SaveFood($name,$price,$opentime,$pic1,$pic2,$pic3,$pic4,$list1,$list2,$place1);
-				$DB->DElconn();
-				echo "<script> var r=confirm(\"提交成功！<\br>是否继续添加?\");if (r==true){window.location.href=\"../tpl/foodupload.html\";}else{window.location.href=\"showfood.php?p=".$foodUid."\";};</script>";
+				echo "<script> var r=confirm(\"提交成功！<\br>当前食物id为".$foodUid."是否继续添加?\");if (r==true){window.location.href=\"upload.php\";}else{window.location.href=\"showfood.php?p=".$foodUid."\";};</script>";
 
 			}
 			else{
 				echo "啥都没有！";
 			}
 		}
-		public function upcomment(){
+		public function upcomment($a){
 			$UP=new UploadModel;
 			$DB=new DBModel;
 			$DB->conn();
@@ -52,15 +50,12 @@ header("Content-type:text/html;charset=utf-8");
 				$score=$UP->SEC($_POST['score']);
 
 				$DB->SaveComment($pid,$name,$comment,$waittime,$score);
-				$DB->DElconn();
 				echo "<script>alert('successful');window.location.href='showfood.php?p=".$pid."';</script>";
 
 				// echo $pid.'<br>'.$name.'<br>'.$comment.'<br>'.$waittime.'<br>'.$score;
 
 			}
-			else{
-				$DB->DElconn();
-				echo "<h1 align=\"center\">好像我把你的评论弄丢了。<br/>可不可以帮我再写一份<br/>委屈状。</h1>";
+			else{				echo "<h1 align=\"center\">好像我把你的评论弄丢了。<br/>可不可以帮我再写一份<br/>委屈状。</h1>";
 			}
 		}
 	}

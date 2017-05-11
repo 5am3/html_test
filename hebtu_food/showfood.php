@@ -1,6 +1,6 @@
 <?php
-require ('lib/smarty/Smarty.class.php');
-require_once 'app/DBModel.class.php';
+require_once 'lib/smarty/Smarty.class.php';
+require_once 'app/DBModels.class.php';
 require_once 'app/JiSuanModel.class.php';
 require_once 'app/ShowController.class.php';
 require_once 'app/UploadModel.class.php';

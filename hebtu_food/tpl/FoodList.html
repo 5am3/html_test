@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,19 +12,19 @@
      	<div class="nav_content">
         <!-- <img src="image1/5.png" width="150px"> -->
 		    <ul class="nav_title">
-		         <li><a href="index.php" class="checked">首页</a></li>
-			    <li><a href="ShowList.php?t=place1&s={$list[0]}">第一食堂</a></li>
-			    <li><a href="ShowList.php?t=place1&s={$list[1]}">第二食堂</a></li>
-			    <li><a href="ShowList.php?t=place1&s={$list[2]}">第三食堂</a></li>
-			    <li><a href="ShowList.php?t=place1&s={$list[3]}">第四食堂</a></li>
-			    <li><a href="ShowList.php?t=place1&s={$list[4]}">第五食堂</a></li>
-			    <li><a href="ShowList.php?t=place1&s={$list[5]}">清真食堂</a></li>
-			    <li><a href="#">餐饮服务</a></li>href="#">餐饮服务</a></li>
+		        <li><a id="title_1" href="index.php">首页</a></li>
+	             <li><a id="title_2" href="ShowList.php?t=place&s={$list[0]}">第一食堂</a></li>
+	             <li><a id="title_3" href="ShowList.php?t=place&s={$list[1]}">第二食堂</a></li>
+	             <li><a id="title_4" href="ShowList.php?t=place&s={$list[2]}">第三食堂</a></li>
+	             <li><a id="title_5" href="ShowList.php?t=place&s={$list[3]}">第四食堂</a></li>
+	             <li><a id="title_6" href="ShowList.php?t=place&s={$list[4]}">第五食堂</a></li>
+	             <li><a id="title_7" href="ShowList.php?t=place&s={$list[5]}">清真食堂</a></li>
+	             <li><a id="title_8" href="server.php">餐饮服务</a></li>
 		    </ul>
     	</div>
    </div>
    <div class="content">
-   		<img src="img/1_wai.jpg" width="100%">
+   		<!-- <img src="img/1_wai.jpg" width="100%" id="bannerPic"> -->
 	    <div class="menu">
 			<h1>MENU</h1>
 			<ul>
@@ -47,7 +47,7 @@
 					<h4>{$cid.name}</h4>
 					<p>价格：{$cid.price}元</p>
 					<p>好评度：<span class="star_o min_star"><span></span></span></p>
-					<p>地址：{$cid.place1}</p>
+					<p>地址：{$cid.place}</p>
 				</div>
 			</div>
 		</a>
@@ -64,6 +64,8 @@
 	    <p>联系电话：XXXXXXXXXXX</p>
 	    <p>邮箱：XXXXXXXXXX@163.com</p>
 	</div>
+<script src="js/jquery-3.1.1.js"></script>
+<script src="js/title.js"></script>
 </div>
 </body>
 </html>

@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{$FoodObj->name}-{$FoodObj->place1}</title>
+	<title>{$FoodObj.name}-{$FoodObj.place1}</title>
 	<link rel="stylesheet" href="css/food.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -12,23 +12,23 @@
      	<div class="nav_content">
         <!-- <img src="image1/5.png" width="150px"> -->
 		    <ul class="nav_title">
-		       <li><a href="index.php" class="checked">首页</a></li>
-             <li><a href="ShowList.php?t=place1&s={$list[0]}">第一食堂</a></li>
-             <li><a href="ShowList.php?t=place1&s={$list[1]}">第二食堂</a></li>
-             <li><a href="ShowList.php?t=place1&s={$list[2]}">第三食堂</a></li>
-             <li><a href="ShowList.php?t=place1&s={$list[3]}">第四食堂</a></li>
-             <li><a href="ShowList.php?t=place1&s={$list[4]}">第五食堂</a></li>
-             <li><a href="ShowList.php?t=place1&s={$list[5]}">清真食堂</a></li>
-             <li><a href="#">餐饮服务</a></li>
+		       <li><a id="title_1" href="index.php" class="checked">首页</a></li>
+             <li><a id="title_2" href="ShowList.php?t=place&s={$list[0]}">第一食堂</a></li>
+             <li><a id="title_3" href="ShowList.php?t=place&s={$list[1]}">第二食堂</a></li>
+             <li><a id="title_4" href="ShowList.php?t=place&s={$list[2]}">第三食堂</a></li>
+             <li><a id="title_5" href="ShowList.php?t=place&s={$list[3]}">第四食堂</a></li>
+             <li><a id="title_6" href="ShowList.php?t=place&s={$list[4]}">第五食堂</a></li>
+             <li><a id="title_7" href="ShowList.php?t=place&s={$list[5]}">清真食堂</a></li>
+             <li><a id="title_8" href="server.php">餐饮服务</a></li>
 		    </ul>
     	</div>
    </div>
    <div class="content">
    			<div class="content">
-   				<p class="BN">{$FoodObj->list1}>>{$FoodObj->list2}>>{$FoodObj->name}</p>
+   				<p class="BN">{$FoodObj.list1}>>{$FoodObj.list2}>>{$FoodObj.name}</p>
    				<div class="content_banner">
-   					<h2>{$FoodObj->name}</h2>
-   					<p>{$FoodObj->place1}</p>
+   					<h2>{$FoodObj.name}</h2>
+   					<p>{$FoodObj.place1}</p>
    					<div class="star">
    						<p>评分：<span id="all_star">{$star|string_format:"%.2f"}</span></p>
    						<span class="star_o"><span> </span></span>
@@ -38,41 +38,41 @@
    				<div class="show">
    					<div class="food_show">
    						<div class="b_food_show">
-   							{if $FoodObj->pic1 eq ''}
+   							{if $FoodObj.pic1 eq ''}
    							<img src="img/notfound.jpg">
    							{else}
-   							<img src="upload/img{$FoodObj->pic1}">
+   							<img src="upload/img{$FoodObj.pic1}">
    							{/if}
    						</div>
 
-   						<div class="s_food_show">
-   						{if $FoodObj->pic1 eq ''}
+   						<div class="s_food_show" id="s_food_show">
+   						{if $FoodObj.pic1 eq ''}
    						<img src="img/notfound.jpg">
    						{else}
-   						<img src="upload/img{$FoodObj->pic1}">
+   						<img src="upload/img{$FoodObj.pic1}">
    						{/if}
-   						{if $FoodObj->pic2 eq ''}
+   						{if $FoodObj.pic2 eq ''}
    						<img src="img/notfound.jpg">
    						{else}
-   						<img src="upload/img{$FoodObj->pic2}">
+   						<img src="upload/img{$FoodObj.pic2}">
    						{/if}
-   						{if $FoodObj->pic3 eq ''}
+   						{if $FoodObj.pic3 eq ''}
    						<img src="img/notfound.jpg">
    						{else}
-   						<img src="upload/img{$FoodObj->pic3}">
+   						<img src="upload/img{$FoodObj.pic3}">
    						{/if}
-   						{if $FoodObj->pic4 eq ''}
+   						{if $FoodObj.pic4 eq ''}
    						<img src="img/notfound.jpg">
    						{else}
-   						<img src="upload/img{$FoodObj->pic4}">
+   						<img src="upload/img{$FoodObj.pic4}">
    						{/if}
    						</div>
    					</div>
    					<div class="brief">
-   						<h2>美食价：<span id="price">￥{$FoodObj->price|string_format:"%.2f"}</span></h2>
-   						<p>ID:<span id="foodID">{$FoodObj->id}</span></p>
+   						<h2>美食价：<span id="price">￥{$FoodObj.price|string_format:"%.2f"}</span></h2>
+   						<p>ID:<span id="foodID">{$FoodObj.id}</span></p>
    						<p>人均等待时间：{if $waittime eq ''}暂无数据{else}{$waittime}分钟{/if}</p>
-   						<p>营业时间：{$FoodObj->open_time}</p>
+   						<!-- <p>营业时间：$FoodObj.open_time</p> -->
    					</div>
    					<br clear="all">
    				</div>
@@ -82,6 +82,9 @@
    						<span><a href="javascript:void(0);" onclick="Open_comment()">点击评论此食品</a></span>
    					</div>
    					{foreach item=cid from=$comment}
+                  {if $cid.name eq ''}
+                  <h2 align="center">还没有人评论哎、你要不要当第yi个？</h2>
+                  {else}
    						<div class="c_card">
    							<div class="c_card_pic">
    								<img src="img/pic.jpg">
@@ -108,6 +111,8 @@
    							<p class="comment_r">{$cid.comment}</p>
    						</div>
    						<hr>
+                     
+                  {/if}
    						{foreachelse}
    						<h2 align="center">还没有人评论哎、你要不要当第一个？</h2>
    					{/foreach}
@@ -117,7 +122,7 @@
    		<div id="CM">
 
    		<h3>评价食品<span><a href="javascript:void(0);" onclick="Close_comment()"">关闭</a></span></h3>
-   			<form action="app/UploadComment.php" method="POST">
+   			<form action="UploadComment.php" method="POST">
    				<table>
    				<tr>
    					<td><label for="name">昵称</label></td>

@@ -1,13 +1,14 @@
-body{
-	background-image: url(image1/beijing1.jpeg);
-}
-*{
+﻿*{
 margin: 0;
  }
 a{
  	text-decoration: none;
-     color:black;
+    color:black;
  }
+a:hover{
+	text-decoration: none;
+	color: black;
+}
 ul{
 	list-style-type: none;
 }
@@ -69,7 +70,7 @@ a:hover{
 
 }
 .menu h1{
-	margin-top: 550px;
+	margin-top: 200px;
 	text-align: center;
 	margin-bottom: 60px;
 }
@@ -228,4 +229,15 @@ a:hover{
 .ic_card p+img{
 	position: absolute;
 	bottom: 0px;
+}
+.foodserver_content{
+	padding:50px;
+}
+.foodserver_content p{
+	text-indent:2em;
+	font-family: 'Arial';
+}
+.foodserver_content h1{
+	font-family: 'Arial';
+	text-align: center;
 }
