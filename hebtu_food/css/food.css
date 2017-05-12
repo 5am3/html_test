@@ -29,7 +29,7 @@ textarea{
 	width: 1200px;
 	margin: 0px auto;
 }
-.BN{
+.BN,.BN a{
 	font-size: 16px;
 	color:#999;
 }
@@ -98,7 +98,13 @@ textarea{
 	position: relative;
 }
 .c_title h2{
+	padding:10px;
+}
+.NoComment{
+	font-size: 16px;
+	color:#9e9e9e;
 	padding:10px 20px;
+	text-align: center;
 
 }
 .c_title span{

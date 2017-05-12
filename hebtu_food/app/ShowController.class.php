@@ -53,21 +53,21 @@ class ShowController{
 		$smarty->display('food.html');
 
 	}
-	public function ShowList($select,$title)
+	public function ShowList($select,$title,$select2='',$title2='')
 	{
 		$DB=new DBModel;
 		// $j= new JiSuanModel;
 	
 		$smarty=$this->init();
 		
-		$FoodList=$DB->LoadSelect($select,$title);
+		$FoodList=$DB->LoadSelect($select,$title,$select2,$title2);
 		foreach ($FoodList as $key) {
 			$Food[]=$key;
 		}
 		if(empty($Food)){
 			$Food="";
 		}
-
+		$smarty->assign('Food_s',$select);
 		$smarty->assign('Food',$Food);
 		$smarty->assign('list',$this->list);
 		$smarty->display('FoodList.html');

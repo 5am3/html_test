@@ -25,7 +25,7 @@
    </div>
    <div class="content">
    			<div class="content">
-   				<p class="BN">{$FoodObj.list1}>>{$FoodObj.list2}>>{$FoodObj.name}</p>
+   				<p class="BN"><a href="ShowList.php?t=list1&s={$FoodObj.list1}">{$FoodObj.list1}</a>&gt;&gt;<a href="ShowList.php?t=list2&s={$FoodObj.list2}">{$FoodObj.list2}</a>&gt;&gt;<a href="ShowList.php?t=name&s={$FoodObj.name}">{$FoodObj.name}</a></p>
    				<div class="content_banner">
    					<h2>{$FoodObj.name}</h2>
    					<p>{$FoodObj.place1}</p>
@@ -83,7 +83,7 @@
    					</div>
    					{foreach item=cid from=$comment}
                   {if $cid.name eq ''}
-                  <h2 align="center">还没有人评论哎、你要不要当第yi个？</h2>
+                  <p class="NoComment">还没有人评论哎、你要不要当第yi个？</p>
                   {else}
    						<div class="c_card">
    							<div class="c_card_pic">
@@ -114,7 +114,7 @@
                      
                   {/if}
    						{foreachelse}
-   						<h2 align="center">还没有人评论哎、你要不要当第一个？</h2>
+   						<p class="NoComment">还没有人评论哎、你要不要当第一个？</p>
    					{/foreach}
    				</div>
    			</div>
