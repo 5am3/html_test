@@ -1,13 +1,13 @@
-<?php
+﻿<?php
 class DBModel{
 	public function conn()
 
 	{
 		$dbms='mysql';     //数据库类型
-		$host='qdm117251480.my3w.com'; //数据库主机名
-		$dbName='qdm117251480_db';    //使用的数据库
-		$user='qdm117251480';      //数据库连接用户名
-		$pass='051347wxd';          //对应的密码
+		$host='qdm******.com'; //数据库主机名
+		$dbName='qdm1******';    //使用的数据库
+		$user='qd*****480';      //数据库连接用户名
+		$pass='****';          //对应的密码
 		$dsn="$dbms:host=$host;dbname=$dbName";
 
 

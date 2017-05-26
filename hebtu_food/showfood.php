@@ -7,7 +7,17 @@ require_once 'app/UploadModel.class.php';
 
 require_once 'app/UploadController.class.php';
 if($_GET){
-	$id=$_GET['p'];
+	if(is_numeric($_GET['p'])){
+		if (!get_magic_quotes_gpc()) {
+			$id=addslashes($_GET['p']);
+		} else {
+			$id=$_GET['p'];
+		}
+	}else{
+		$id=1;
+	}
+	
+	
 }else{
 	$id=12;
 }

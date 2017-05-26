@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>{$FoodObj.name}-{$FoodObj.place1}</title>
+	<title>{$FoodObj.name}-{$FoodObj.place}</title>
 	<link rel="stylesheet" href="css/food.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
@@ -12,7 +12,7 @@
      	<div class="nav_content">
         <!-- <img src="image1/5.png" width="150px"> -->
 		    <ul class="nav_title">
-		       <li><a id="title_1" href="index.php" class="checked">首页</a></li>
+		       <li><a id="title_1" href="index.php">首页</a></li>
              <li><a id="title_2" href="ShowList.php?t=place&s={$list[0]}">第一食堂</a></li>
              <li><a id="title_3" href="ShowList.php?t=place&s={$list[1]}">第二食堂</a></li>
              <li><a id="title_4" href="ShowList.php?t=place&s={$list[2]}">第三食堂</a></li>
@@ -28,7 +28,7 @@
    				<p class="BN"><a href="ShowList.php?t=list1&s={$FoodObj.list1}">{$FoodObj.list1}</a>&gt;&gt;<a href="ShowList.php?t=list2&s={$FoodObj.list2}">{$FoodObj.list2}</a>&gt;&gt;<a href="ShowList.php?t=name&s={$FoodObj.name}">{$FoodObj.name}</a></p>
    				<div class="content_banner">
    					<h2>{$FoodObj.name}</h2>
-   					<p>{$FoodObj.place1}</p>
+   					<p>{$FoodObj.place}</p>
    					<div class="star">
    						<p>评分：<span id="all_star">{$star|string_format:"%.2f"}</span></p>
    						<span class="star_o"><span> </span></span>
@@ -76,7 +76,8 @@
    					</div>
    					<br clear="all">
    				</div>
-   				<div class="comment">
+   				<!-- 
+               <div class="comment">
    					<div class="c_title">
    						<h2>评论</h2>
    						<span><a href="javascript:void(0);" onclick="Open_comment()">点击评论此食品</a></span>
@@ -87,7 +88,7 @@
                   {else}
    						<div class="c_card">
    							<div class="c_card_pic">
-   								<img src="img/pic.jpg">
+   								<img src="img/icon.png">
    								<h4 align="center">{$cid.name}</h4>
    							</div>
    							<div class="user_top">
@@ -116,10 +117,37 @@
    						{foreachelse}
    						<p class="NoComment">还没有人评论哎、你要不要当第一个？</p>
    					{/foreach}
-   				</div>
-   			</div>
+   				</div> 
+               -->
 
-   		<div id="CM">
+               <!--PC和WAP自适应版-->
+               <div class="rank_me">
+                  <form action="UploadComment.php" method="POST">
+                     <label for="waittime">就餐等待时间：</label>
+                     <input type="text" placeholder="例：3" width="235px" name="waittime" id="waittime">
+                     <label for="score" style="margin-left: 30px;">评分：</label>
+                     <input type="hidden" name="name" value="a">
+                     <input type="hidden" name="comment" value="b">
+                     <input type="hidden" name="pid" id="pid">
+                     <input type="hidden" name="score" id="score">
+
+                     <div id="rank" class="pingfen">  
+                       <ul>  
+                           <li></li>  
+                           <li></li>  
+                           <li></li>  
+                           <li></li>  
+                           <li></li>  
+                       </ul>  
+                       <p>加载中</p>  
+                     </div>
+                     <input type="submit" value="提交评价">
+                  </form>
+   			   </div>
+               <div id="SOHUCS" sid="{$FoodObj.id}" ></div> 
+            </div>
+            
+   		<!-- <div id="CM">
 
    		<h3>评价食品<span><a href="javascript:void(0);" onclick="Close_comment()"">关闭</a></span></h3>
    			<form action="UploadComment.php" method="POST">
@@ -158,18 +186,19 @@
    					
    				</table>
    			</form>
-   		</div>
+   		</div> -->
 	</div>
 	<div class="bottom">
 	    <p>地址：河北师范大学餐厅</p>
-	    <p>联系电话：XXXXXXXXXXX</p>
-	    <p>邮箱：XXXXXXXXXX@163.com</p>
+       <p>Power By:河北师范大学软件学院16级6班web小组</p>
+       <p>Copyright &copy; 2017  v1.05</p>
 	</div>
 </div>
 </body>
 </html>
 	
 <script src="js/jquery-3.1.1.js"></script>
+<script src="js/comment.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

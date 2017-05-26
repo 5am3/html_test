@@ -167,3 +167,7 @@ textarea{
 	margin-top: -25px;
 	margin-bottom: 15px;
 }
+#rank{
+	display: inline-block;
+	width:200px;
+}
